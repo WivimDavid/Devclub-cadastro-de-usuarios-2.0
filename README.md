@@ -3,9 +3,9 @@
 Este projeto foi desenvolvido no modulo de React do curso Fullstack pro do Devclub.
 
 ## Tecnologias
-- React
+- Reactjs
 - React Router Dom
-- React Hooks
+- React Hooks (useState, useEffect, useRef)
 - Styled Components
 - Axios
 

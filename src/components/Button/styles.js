@@ -11,7 +11,7 @@ export const Button = styled.button`
       : 'transparent'};
   color: #fff;
   font-size: 16px;
-  margin-top: -50px;
+  /* margin-top: -50px; */
   padding: 16px 32px;
   width: fit-content;
   border-radius: 30px;
