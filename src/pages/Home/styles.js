@@ -7,27 +7,14 @@ export const Container = styled.div`
   justify-content: space-evenly;
   flex-direction: column;
   padding: 20px;
-  height: 100vh;
+  min-height: 100vh;
   
   @media (max-width: 768px) {
-    height: 120vh;
+    min-height: 100vh;
     gap: 15px;
   }
 `
-export const TopBackground = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to right, #fe7e5d, #7f3841);
-  height: 30vh;
-  width: 80vw;
-  max-width: 800px;
-  border-radius: 30px;
-`
-export const ImgBanner = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-`
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -83,27 +70,5 @@ export const Input = styled.input`
   }
 `
 
-export const Button = styled.button`
-  background: linear-gradient(180deg, #fe7e5d 50%, #ff6378 100%);
-  color: #fff;
-  font-size: 16px;
-  margin-top: -50px;
-  padding: 16px 32px;
-  width: fit-content;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
 
-  &:hover {
-    opacity: 0.8;
-  }
-  &:active {
-    opacity: 0.5;
-  }
-
-  @media (max-width: 768px) {
-    margin-top: 20px;
-  }
-
-`
 

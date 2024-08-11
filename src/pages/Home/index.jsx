@@ -1,10 +1,9 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import api from '../../services/api';
 
-import Banner from '../../assets/users.png'
 import {
   Container,
-  TopBackground,
-  ImgBanner,
   Form,
   Title,
   ContainerInputs,
@@ -12,27 +11,32 @@ import {
   SubContainersInputs,
   InputLabel,
   Input,
-  Button
 } from './styles'
 
-export function Home() {
+
+import Button from '../../components/Button';
+import TopBackground from '../../components/TopBackground';
+
+function Home() {
+
   const inputName = useRef();
   const inputEmail = useRef();
   const inputAge = useRef();
+  const navigate = useNavigate();
 
-  const registerNewUser = () => {
-    console.log(inputName.current.value);
-    console.log(inputEmail.current.value);
-    console.log(inputAge.current.value);
+  async function registerNewUser() {
+    await api.post('/usuarios', {
+      name: inputName.current.value,
+      age: parseInt(inputAge.current.value),
+      email: inputEmail.current.value
+    });
+
   }
 
   return (
     <>
       <Container>
-        <TopBackground>
-          <ImgBanner src={Banner} alt="banner-users" />
-        </TopBackground>
-
+        <TopBackground />
         <Form>
           <Title>Cadastrar Usuários</Title>
 
@@ -57,15 +61,20 @@ export function Home() {
           </ContainerInputs>
         </Form>
 
-        <Button type='button' onClick={registerNewUser}>Cadastrar Usuário</Button>
-        <Button >Listar Usuários</Button>
+        <Button type='button' onClick={registerNewUser} theme='primary'>
+          Cadastrar Usuários
+        </Button>
+
+        <Button type='button'  onClick={() => navigate('/lista-usuarios')}>
+          Ver lista de Usuários
+        </Button>
 
       </Container>
     </>
   )
 }
 
-
+export default Home
 
 
 

@@ -4,7 +4,7 @@ Este projeto foi desenvolvido no modulo de React do curso Fullstack pro do Devcl
 
 ## Tecnologias
 - React
-- React Router
+- React Router Dom
 - React Hooks
 - Styled Components
 - Axios
